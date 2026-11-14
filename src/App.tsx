@@ -876,22 +876,25 @@ function HomePage({
             {FACILITIES.map((facility, index) => (
               <div 
                 key={index} 
-                className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl group h-80 flex flex-col justify-end p-6 hover:border-amber-500/50 transition duration-300"
+                className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl group hover:border-amber-500/50 transition duration-300 flex flex-col"
               >
-                <div className="absolute inset-0 z-0">
+                <div className="relative h-52 overflow-hidden">
                   <img 
                     src={facility.image} 
                     alt={facility.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30"></div>
-                </div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-slate-950/80 backdrop-blur-md border border-amber-500/30 flex items-center justify-center mb-3 shadow-lg group-hover:scale-105 transition">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                  <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-slate-950/80 backdrop-blur-md border border-amber-500/30 flex items-center justify-center shadow-lg">
                     {facility.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{facility.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{facility.description}</p>
+                </div>
+
+                <div className="p-6 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">{facility.title}</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed">{facility.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
